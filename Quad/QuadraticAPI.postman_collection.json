@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "7d7ecae7-960e-47c4-9f04-15ec9dd7abe7",
+		"name": "QuadraticAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST /grab/{args}",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"A\" : 3,\r\n    \"B\" : 10,\r\n    \"C\" : 2\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/grab",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"grab"
+					]
+				},
+				"description": "принимает 3 аргумента"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /solve",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/solve",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"solve"
+					]
+				},
+				"description": "возаращает аргументы и количество корней"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "106872f3-8ca4-4ff2-a271-e7df2646b513",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a40bca03-0776-401b-b407-f13bd511e2eb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
