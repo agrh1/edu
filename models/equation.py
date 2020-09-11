@@ -1,3 +1,4 @@
+"""поиск количества корней квадратного уравнения по заданным коэффициентам."""
 class QuadraticFunc:
     """descr_eq"""
     def __init__(self, a_coeff, b_coeff, c_coeff):
@@ -23,10 +24,9 @@ class QuadraticFunc:
         descr_eq = self.__b ** 2 - 4 * self.__a * self.__c
         if descr_eq > 0:
             return 2
-        elif descr_eq == 0:
+        if descr_eq == 0:
             return 1
-        else:
-            return 0
+        return 0
 
 if __name__ == "__main__":
     pass
