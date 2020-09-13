@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "793350ba-3fc3-4239-a97b-a246af3dfcdb",
+		"name": "AutosStockAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST /register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"Bob\",\r\n    \"password\" : \"qwerty\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"register"
+					]
+				},
+				"description": "регистрация пользователя"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /stock",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/stock",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"stock"
+					]
+				},
+				"description": "состояние склада"
+			},
+			"response": []
+		},
+		{
+			"name": "GET /auto/<string:mark>",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/auto/toyota2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auto",
+						"toyota2"
+					]
+				},
+				"description": "данные по авто"
+			},
+			"response": []
+		},
+		{
+			"name": "POST /auto/<string:mark>",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n             \"max_speed\" : 280,\r\n             \"distance\" : 400,\r\n             \"handler\" : \"Auto Motors\",\r\n             \"stock\" : \"Japan\"\r\n            }\r\n"
+				},
+				"url": {
+					"raw": "{{base_url}}/auto/mazda",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auto",
+						"mazda"
+					]
+				},
+				"description": "добавить авто\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /auto/<string:mark>",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n             \"max_speed\" : 400,\r\n             \"distance\" : 400,\r\n             \"handler\" : \"Auto Motors\",\r\n             \"stock\" : \"Jan\"\r\n            }\r\n"
+				},
+				"url": {
+					"raw": "{{base_url}}/auto/toyota2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auto",
+						"toyota2"
+					]
+				},
+				"description": "обновить авто"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /auto/<string:mark>",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/auto/toyota2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auto",
+						"toyota2"
+					]
+				},
+				"description": "удалить авто"
+			},
+			"response": []
+		},
+		{
+			"name": "POST /auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"Bob\",\r\n    \"password\" : \"qwerty\"\r\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/auth",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth"
+					]
+				},
+				"description": "запрос на аутентификацию"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
